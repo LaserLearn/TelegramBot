@@ -6,8 +6,10 @@ using TelegramBot.contract.Database.comment;
 using TelegramBot.contract.Database.generic;
 using TelegramBot.contract.Database.user;
 using TelegramBot.handlers.channel;
+using TelegramBot.handlers.NextPast;
 using TelegramBot.handlers.register;
 using TelegramBot.handlers.start;
+using TelegramBot.handlers.Toggle;
 using TelegramBot.Imp.Database.comment;
 using TelegramBot.Imp.Database.generic;
 using TelegramBot.Imp.Database.user;
@@ -69,6 +71,8 @@ builder.Services.AddSingleton<ChannelService>();
 builder.Services.AddScoped<ITelegramUpdateHandler, StartHandler>();
 builder.Services.AddScoped<ITelegramUpdateHandler, RegisterCommandHandler>();
 builder.Services.AddScoped<ITelegramUpdateHandler, ChannelCommandHandler>();
+builder.Services.AddScoped<ITelegramUpdateHandler, NextPastCommandHandler>();
+builder.Services.AddScoped<ITelegramUpdateHandler, ToggleSelectionHandler>();
 
 
 #endregion
