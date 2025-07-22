@@ -1,6 +1,7 @@
 ﻿using Telegram.Bot.Types;
 using TelegramBot.contract.Bot.start;
 using TelegramBot.Services.user.menu;
+using TelegramBot.Tool;
 
 namespace TelegramBot.handlers.start
 {
@@ -21,13 +22,15 @@ namespace TelegramBot.handlers.start
             return Task.FromResult(true);
         }
 
-        public Task DispatchAsync(Update update, CancellationToken cancellationToken)
+        public async Task DispatchAsync(Update update, CancellationToken cancellationToken)
         {
             var messageText = update.Message?.Text;
+            var chatid = UserStateTools.GetChatId(update);
 
             switch (messageText)
             {
                 case "/start":
+                    await UserStateTools.ClearAsync(chatid);
                     return HandleStartAsync(update, cancellationToken);
 
                 default:

@@ -120,7 +120,7 @@ namespace TelegramBot.handlers.channel
             if (chatId == null || string.IsNullOrEmpty(text))
                 return false;
 
-            string channelUsernameOrId = "-1001760119257"; // آی‌دی یا یوزرنیم کانال
+            string channelUsernameOrId = ""; // آی‌دی یا یوزرنیم کانال
 
             var keyboard = new InlineKeyboardMarkup(new[]
             {
@@ -173,7 +173,7 @@ namespace TelegramBot.handlers.channel
 
             string? caption = "📸 عکس ارسال شده از سمت کاربر";
 
-            string channelUsernameOrId = "-1001760119257";
+            string channelUsernameOrId = "";
 
             await _botClient.SendPhotoAsync(
                 chatId: channelUsernameOrId,
@@ -193,7 +193,7 @@ namespace TelegramBot.handlers.channel
             if (chatId == null)
                 return false;
 
-            string channelUsernameOrId = "-1001760119257";
+            string channelUsernameOrId = "";
 
             string question = "نظر شما درباره این ربات چیست؟";
             string[] options = new string[] { "عالی", "خوب", "متوسط", "ضعیف" };

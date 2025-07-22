@@ -53,4 +53,10 @@
         ChannelMenu,
         Done
     }
+
+    public enum GroupState
+    {
+        None,
+        Done
+    }
 }
